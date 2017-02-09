@@ -3,15 +3,15 @@
  */
 $(document).ready(function() {loadMenu(); updateContent("home");});
 var currentContent = "";
+
 function updateContent(updatedContent) {
 	var elem = $('#content');
 	if(currentContent == updatedContent)
-		return;
-	console.log("obtained element "+elem[0].id+" updating to "+updatedContent);
+		return;
 	if(updatedContent == "home") {
 		elem.load('./pages/home.html');
 	}
-	else if(updatedContent == "bio") {	
+	else if(updatedContent == "bio") {
 		elem.load('./pages/bio.html');
 	}
 	else if(updatedContent == "work") {
@@ -22,12 +22,12 @@ function updateContent(updatedContent) {
 	}
 	else {
 		updateContent('home');
-	}
+	}
 	currentContent = updatedContent;
-}
+}
 function loadMenu() {
 	$('#menuBar').load('./elems/navbar.html');
-}
+}
 function loadPostMenu() {
 	$('#comments').load('./extras/form.html');
 	if($('#comments').css('display') == 'none') {
@@ -36,4 +36,4 @@ function loadPostMenu() {
 	else {
 		$('#comments').css('display','none');
 	}
-}
+}
